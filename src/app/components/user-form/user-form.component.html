@@ -1,0 +1,27 @@
+<h2>Create New User</h2>
+
+<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+  <label>Username:</label>
+  <input type="text" [(ngModel)]="user.username" name="username" required /><br />
+
+  <label>Email:</label>
+  <input type="email" [(ngModel)]="user.email" name="email" required /><br />
+
+  <label>Bio:</label>
+  <input type="text" [(ngModel)]="user.bio" name="bio" /><br />
+
+  <label>Location:</label>
+  <input type="text" [(ngModel)]="user.location" name="location" /><br />
+
+  <label>Rating:</label>
+  <input type="number" [(ngModel)]="user.rating" name="rating" step="0.1" /><br />
+
+  <label>Role:</label>
+  <select [(ngModel)]="user.role" name="role">
+    <option value="USER">USER</option>
+    <option value="ADMIN">ADMIN</option>
+  </select><br /><br />
+
+  <button type="submit">Create User</button>
+</form>
+

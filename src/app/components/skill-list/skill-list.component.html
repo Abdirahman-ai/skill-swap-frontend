@@ -1,0 +1,22 @@
+<h2>All Skills</h2>
+
+<div *ngIf="isLoading">Loading skills...</div>
+
+<table *ngIf="!isLoading && skills.length" border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let skill of skills">
+      <td>{{ skill.name }}</td>
+      <td>{{ skill.category }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!isLoading && !skills.length">
+  No skills found.
+</div>

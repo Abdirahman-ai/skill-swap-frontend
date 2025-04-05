@@ -1,0 +1,33 @@
+<h2>Create a New Session</h2>
+
+<form (ngSubmit)="onSubmit()">
+  <label>Teacher:</label>
+  <select [(ngModel)]="session.teacherUsername" name="teacher" required>
+    <option *ngFor="let user of users" [value]="user.username">{{ user.username }}</option>
+  </select><br />
+
+  <label>Learner:</label>
+  <select [(ngModel)]="session.learnerUsername" name="learner" required>
+    <option *ngFor="let user of users" [value]="user.username">{{ user.username }}</option>
+  </select><br />
+
+  <label>Skill:</label>
+  <select [(ngModel)]="session.skillName" name="skill" required>
+    <option *ngFor="let skill of skills" [value]="skill.name">{{ skill.name }}</option>
+  </select><br />
+
+  <label>Date/Time:</label>
+  <input type="datetime-local" [(ngModel)]="session.dateTime" name="dateTime" required /><br />
+
+  <label>Status:</label>
+  <select [(ngModel)]="session.status" name="status">
+    <option value="PENDING">PENDING</option>
+    <option value="CONFIRMED">CONFIRMED</option>
+    <option value="COMPLETED">COMPLETED</option>
+  </select><br />
+
+  <label>Feedback:</label>
+  <input type="text" [(ngModel)]="session.feedback" name="feedback" /><br /><br />
+
+  <button type="submit">Create Session</button>
+</form>

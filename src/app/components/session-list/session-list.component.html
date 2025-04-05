@@ -1,0 +1,30 @@
+<h2>All Sessions</h2>
+
+<div *ngIf="isLoading">Loading sessions...</div>
+
+<table *ngIf="!isLoading && sessions.length" border="1">
+  <thead>
+    <tr>
+      <th>Teacher</th>
+      <th>Learner</th>
+      <th>Skill</th>
+      <th>Date/Time</th>
+      <th>Status</th>
+      <th>Feedback</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let session of sessions">
+      <td>{{ session.teacherUsername }}</td>
+      <td>{{ session.learnerUsername }}</td>
+      <td>{{ session.skillName }}</td>
+      <td>{{ session.dateTime | date:'medium' }}</td>
+      <td>{{ session.status }}</td>
+      <td>{{ session.feedback || '-' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!isLoading && !sessions.length">
+  No sessions found.
+</div>
