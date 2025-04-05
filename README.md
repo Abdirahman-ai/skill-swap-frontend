@@ -35,7 +35,7 @@ This app is built with **Angular** and communicates with the SkillSwap Spring Bo
 
 Make sure the SkillSwap backend is running locally at: http://localhost:8080
 
-📦 Backend repo: [SkillSwap Backend](https://github.com/your-username/skill-swap-backend)  
+📦 Backend repo: [SkillSwap Backend](https://github.com/Abdirahman-ai/skill-swap-backend)  
 
 
 ## Development server
