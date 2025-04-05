@@ -1,12 +1,14 @@
-<nav style="margin-bottom: 20px;">
-    <a routerLink="/users" routerLinkActive="active" style="margin-right: 10px;">Users</a>
-    <a routerLink="/users/create" routerLinkActive="active" style="margin-right: 10px;">Add User</a>
-    <a routerLink="/skills" routerLinkActive="active" style="margin-right: 10px;">Skills</a>
-    <a routerLink="/skills/create" routerLinkActive="active" style="margin-right: 10px;">Add Skill</a>
-    <a routerLink="/sessions" routerLinkActive="active" style="margin-right: 10px;">Sessions</a>
-    <a routerLink="/sessions/create" routerLinkActive="active" style="margin-right: 10px;">Add Session</a>
-  </nav>
-  
-  <router-outlet></router-outlet>
-  
-  
+<mat-toolbar color="primary">
+
+  <span class="logo">SkillSwap</span>
+  <span class="spacer"></span>
+
+  <a mat-button routerLink="/users" routerLinkActive="active-link">Users</a>
+  <a mat-button routerLink="/users/create" routerLinkActive="active-link">Add User</a>
+  <a mat-button routerLink="/skills" routerLinkActive="active-link">Skills</a>
+  <a mat-button routerLink="/skills/create" routerLinkActive="active-link">Add Skill</a>
+  <a mat-button routerLink="/sessions" routerLinkActive="active-link">Sessions</a>
+  <a mat-button routerLink="/sessions/create" routerLinkActive="active-link">Add Session</a>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
