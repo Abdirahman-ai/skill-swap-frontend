@@ -1,6 +1,42 @@
-# SkillSwapUi
+# SkillSwap UI
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+
+Frontend application for **SkillSwap**, a platform where users can teach and learn skills from each other.
+
+This app is built with **Angular** and communicates with the SkillSwap Spring Boot backend via REST API.
+
+---
+
+## 🛠 Tech Stack
+
+- Angular 17 (CLI v19.2.6)
+- Angular Material
+- TypeScript
+- RxJS
+- Bootstrap (optional)
+- Toastr (for notifications)
+
+---
+
+## 🧭 Features
+
+- View all users
+- Create a new user
+- View all skills
+- Add a new skill
+- View all sessions
+- Schedule a new session
+- Responsive Material Design layout
+
+---
+
+## 🌐 Backend API
+
+Make sure the SkillSwap backend is running locally at: http://localhost:8080
+
+📦 Backend repo: [SkillSwap Backend](https://github.com/your-username/skill-swap-backend)  
+
 
 ## Development server
 
