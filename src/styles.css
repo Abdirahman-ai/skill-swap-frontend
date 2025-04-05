@@ -1,4 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Global height and font */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #eae7e2; /* Soft gray background */
+    color: #333;
+  }
+  
+  /* Smooth transitions for UI polish */
+  * {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Main app content wrapper */
+  .content {
+    padding: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Toolbar logo spacing */
+  .logo {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  
+  /* Flex spacer for toolbar alignment */
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  /* Active nav link styling */
+  a.active-link {
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  /* Optional footer style */
+  footer.footer {
+    text-align: center;
+    padding: 16px;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
