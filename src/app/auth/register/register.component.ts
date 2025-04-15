@@ -1,0 +1,37 @@
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { AuthService } from '../auth.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+
+@Component({
+  selector: 'app-register',
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
+  ],
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
+})
+export class RegisterComponent {
+  username = '';
+  email = '';
+  password = '';
+  errorMessage = '';
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+  onSubmit(): void {
+    this.authService.register(this.username, this.email, this.password).subscribe({
+      next: () => this.router.navigate(['/users']),
+      error: () => this.errorMessage = 'Registration failed'
+    });
+  }
+}

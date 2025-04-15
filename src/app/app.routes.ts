@@ -5,14 +5,21 @@ import { SessionListComponent } from './components/session-list/session-list.com
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { SkillFormComponent } from './components/skill-form/skill-form.component';
 import { SessionFormComponent } from './components/session-form/session-form.component';
-
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
+import { AuthGuard } from './auth/auth.guard'; 
 
 export const appRoutes: Routes = [
-  { path: '', redirectTo: 'users', pathMatch: 'full' },
-  { path: 'users', component: UserListComponent },
-  { path: 'users/create', component: UserFormComponent },
-  { path: 'skills', component: SkillListComponent },
-  { path: 'skills/create', component: SkillFormComponent },
-  { path: 'sessions', component: SessionListComponent },
-  { path: 'sessions/create', component: SessionFormComponent } // ✅ Add this line
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+
+  // 🔐 Protected routes
+  { path: 'users', component: UserListComponent, canActivate: [AuthGuard] },
+  { path: 'users/create', component: UserFormComponent, canActivate: [AuthGuard] },
+  { path: 'skills', component: SkillListComponent, canActivate: [AuthGuard] },
+  { path: 'skills/create', component: SkillFormComponent, canActivate: [AuthGuard] },
+  { path: 'sessions', component: SessionListComponent, canActivate: [AuthGuard] },
+  { path: 'sessions/create', component: SessionFormComponent, canActivate: [AuthGuard] },
+
+  { path: '', redirectTo: 'users', pathMatch: 'full' }
 ];
